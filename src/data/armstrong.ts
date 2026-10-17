@@ -38,13 +38,6 @@ export interface ArmstrongTile {
 // Перемещение в один блок WP
 export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
   {
-  id: "white-aluminum",
-  label: "Белый алюминий",
-  name: "Потолочная панель AP600A6 Tegular/Т-24 белый алюминий",
-  art: "12903346", image: `${IMG}tile-aluminum.webp`,
-  gallery: [`${IMG}tile-aluminum-1.webp`, `${IMG}tile-aluminum-2.webp`],
-  },
-  {
     id: "pharaon", label: "Комплект Pharaon 24шт.",
     name: "Набор потолочных плит Pharaon 600x600 мм цвет белый 24 шт.",
     art: "89372764", image: `${IMG}tile-pharaon-1.webp`,
@@ -73,6 +66,13 @@ export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
     name: "Потолочная панель AP600A6 Tegular/Т-24 перф. белый",
     art: "12903354", image: `${IMG}tile-perforated-1.webp`,
     gallery: [`${IMG}tile-perforated-1.webp`, `${IMG}tile-perforated-2.webp`],
+  },
+  {
+  id: "white-aluminum",
+  label: "Белый алюминий",
+  name: "Потолочная панель AP600A6 Tegular/Т-24 белый алюминий",
+  art: "12903346", image: `${IMG}tile-pharaon-1.webp`,
+  gallery: [`${IMG}tile-pharaon-1.webp`, `${IMG}tile-aluminum-2.webp`],
   },
   DEFAULT_ARMSTRONG_TILE,
 ];
