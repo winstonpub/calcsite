@@ -60,7 +60,7 @@ export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
     id: "white-galvanized-steel", label: "Белая оцинкованная сталь",
     name: "Потолочная панель AP600A6 Tegular/Т-24 белая оцинкованная сталь",
     art: "84585955", image: `${IMG}tile-galvanized-steel.webp`,
-    gallery: [`${IMG}tile-galvanized-steel-1.webp`, `${IMG}tile-galvanized-steel-2.webp`],
+    gallery: [`${IMG}tile-baikal-1.webp`, `${IMG}tile-galvanized-steel-2.webp`],
   },
   {
     id: "white-steel", label: "Белая сталь",
