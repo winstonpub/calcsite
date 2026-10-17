@@ -127,12 +127,12 @@ export const ARMSTRONG_ANGLES: readonly ArmstrongAngle[] = [
   {
     id: "steel", label: "Сталь",
     name: "Угол периметральный стальной 19x19x3000мм белый", art: "13452305",
-    image: `${IMG}angle-steel.jpg`,
+    image: `${IMG}angle.wepb`,
   },
   {
     id: "aluminum", label: "Алюминий",
-    name: "Угол периметральный алюминиевый 19x19x3000мм белый", art: "",
-    image: `${IMG}angle-aluminum.jpg`,
+    name: "Угол периметральный алюминиевый 19x19x3000мм белый", art: "15656344",
+    image: `${IMG}angle.wepb`,
   },
 ];
 
