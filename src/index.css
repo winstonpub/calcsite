@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pro: #ffcb05;
+  --color-pro-dark: #f0bc00;
+  --color-pro-soft: #ffe97a;
+  --color-graphite: #20282b;
+  --color-ink: #14191b;
+  --color-smoke: #f4f4f2;
+  --color-line: #e5e4e0;
+  --font-sans: "Onest", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #ffcb05;
+  color: #20282b;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- custom range slider ---------- */
+input[type="range"].pro-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 26px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].pro-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #ffcb05 0%,
+    #ffcb05 var(--fill, 50%),
+    #e7e6e2 var(--fill, 50%),
+    #e7e6e2 100%
+  );
+}
+input[type="range"].pro-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #20282b;
+  border: 5px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(20, 25, 27, 0.35), 0 0 0 1px #e5e4e0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+input[type="range"].pro-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(20, 25, 27, 0.4), 0 0 0 1px #ffcb05;
+}
+input[type="range"].pro-range::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: #e7e6e2;
+}
+input[type="range"].pro-range::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: #ffcb05;
+}
+input[type="range"].pro-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #20282b;
+  border: 5px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(20, 25, 27, 0.35), 0 0 0 1px #e5e4e0;
+}
+
+/* number input spinners off */
+input.no-spin::-webkit-outer-spin-button,
+input.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input.no-spin {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* thin scrollbars for spec table */
+.thin-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #d6d5d1;
+  border-radius: 999px;
+}
+
+/* marquee ticker */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-ticker {
+  animation: ticker 28s linear infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+/* плавная смена схемы ячейки при выборе размера */
+@keyframes scheme-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scheme-in {
+  animation: scheme-in 0.28s ease-out both;
+}

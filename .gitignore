@@ -1,0 +1,25 @@
+# зависимости — устанавливаются командой npm ci
+node_modules/
+
+# результат сборки — пересоздаётся GitHub Actions
+dist/
+dist-ssr/
+
+# логи и служебные файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.local
+
+# редакторы и система
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# переменные окружения (секреты не коммитим)
+.env
+.env.*
+!.env.example
