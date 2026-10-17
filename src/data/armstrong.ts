@@ -35,7 +35,7 @@ export interface ArmstrongTile {
   gallery?: string[];
 };
 
-// Перемещение в один блок WP
+// Перемещение в один блок WP1
 export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
   {
     id: "pharaon", label: "Комплект Pharaon 24шт.",
