@@ -54,7 +54,7 @@ export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
     id: "baikal", label: "Комплект Байкал 20шт.",
     name: "Плита потолочная Knauf Armstrong Байкал 90RH Board 600x600x12 мм (в коробке 20 шт. 7.2 м2)",
     art: "82458369", image: `${IMG}tile-baikal-1.webp`,
-    gallery: [`${IMG}tile-baikal-1.webp`, `${IMG}tile-baikal-2.webp`],
+    gallery: [`${IMG}tile-aluminum.webp`, `${IMG}tile-baikal-2.webp`],
   },
   {
     id: "white-galvanized-steel", label: "Белая оцинкованная сталь",
