@@ -54,22 +54,26 @@ export const ARMSTRONG_TILES: readonly ArmstrongTile[] = [
   {
     id: "baikal", label: "Комплект Байкал 20шт.",
     name: "Плита потолочная Knauf Armstrong Байкал 90RH Board 600x600x12 мм (в коробке 20 шт. 7.2 м2)",
-    art: "82458369", image: `${IMG}tile-baikal.jpg`,
+    art: "82458369", image: `${IMG}tile-baikal-1.webp`,
+    gallery: [`${IMG}tile-baikal-1.webp`, `${IMG}tile-baikal-2.webp`],
   },
   {
     id: "white-galvanized-steel", label: "Белая оцинкованная сталь",
     name: "Потолочная панель AP600A6 Tegular/Т-24 белая оцинкованная сталь",
-    art: "84585955", image: `${IMG}tile-galvanized-steel.jpg`,
+    art: "84585955", image: `${IMG}tile-galvanized-steel-1.webp`,
+    gallery: [`${IMG}tile-galvanized-steel-1.webp`, `${IMG}tile-galvanized-steel-2.webp`],
   },
   {
     id: "white-steel", label: "Белая сталь",
     name: "Потолочная панель AP600A6 Tegular/Т-24 белая сталь",
-    art: "15143311", image: `${IMG}tile-white-steel.jpg`,
+    art: "15143311", image: `${IMG}tile-white-steel-1.webp`,
+    gallery: [`${IMG}tile-white-steel-1.webp`, `${IMG}tile-white-steel-2.webp`],
   },
   {
     id: "perforated-white", label: "Перфорированная белая",
     name: "Потолочная панель AP600A6 Tegular/Т-24 перф. белый",
-    art: "12903354", image: `${IMG}tile-perforated.jpg`,
+    art: "12903354", image: `${IMG}tile-perforated-1.webp`,
+    gallery: [`${IMG}tile-perforated-1.webp`, `${IMG}tile-perforated-2.webp`],
   },
   DEFAULT_ARMSTRONG_TILE,
 ];
