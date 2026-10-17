@@ -97,12 +97,12 @@ export const ARMSTRONG_PROFILES: readonly ArmstrongProfile[] = [
   {
     id: "premium", label: "Премиум",
     arts: { main37: "15386313", cross12: "15386305", cross06: "15386292" },
-    image: `${IMG}profile-premium.jpg`,
+    image: `${IMG}profile-premium.webo`,
   },
   {
     id: "economy", label: "Эконом",
     arts: { main37: "", cross12: "", cross06: "" },
-    image: `${IMG}profile-economy.jpg`,
+    image: `${IMG}profile-economy.webp`,
   },
 ];
 
