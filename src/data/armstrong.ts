@@ -39,8 +39,8 @@ export const DEFAULT_ARMSTRONG_TILE: ArmstrongTile = {
   id: "white-aluminum",
   label: "Белый алюминий",
   name: "Потолочная панель AP600A6 Tegular/Т-24 белый алюминий",
-  art: "12903346",
-  image: `${IMG}tile-aluminum.jpg`,
+  art: "12903346", image: `${IMG}tile-aluminum.webp`,
+  gallery: [`${IMG}tile-aluminum-1.webp`, `${IMG}tile-aluminum-2.webp`],
 };
 
 // Product articles supplied for the six available tile variants.
