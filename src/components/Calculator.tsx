@@ -173,7 +173,7 @@ function PartImage({ images, caption, label }: { images: string[]; caption: stri
             src={src}
             alt={`${caption}: ${label} — фото ${safeIndex + 1} из ${total}`}
             loading="lazy"
-            className="block aspect-[800/420] w-full object-cover animate-scheme-in"
+            className="block aspect-[800/800] w-full object-cover animate-scheme-in"
           />
           <span className="pointer-events-none absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-lg bg-white/90 text-graphite/60 opacity-0 shadow-sm transition-opacity group-hover:opacity-100">
             <Maximize2 size={14} strokeWidth={2.2} />
