@@ -114,6 +114,9 @@ export function getArmstrongProfile(id: string): ArmstrongProfile {
 
 /* -------------------------------- Угол -------------------------------- */
 
+/** Папка с иллюстрациями (путь без ведущего «/», чтобы работало на GitHub Pages). */
+const IMG = "images/armstrong/";
+
 export interface ArmstrongAngle {
   id: string;
   label: string;
