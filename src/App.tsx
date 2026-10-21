@@ -12,7 +12,7 @@ import AdminPage from "./pages/AdminPage";
 import RoofPage from "./pages/RoofPage";
 
 /**
- * Роутинг по hash, чтобы сайт работал как статика на GitHub Pages.
+ * Роутинг по hash, чтобы сайт работал как статика на GitHub Pages.1
  *  «#/» → Главная
  *  «#/grilyato» → калькулятор Грильято
  *  «#/armstrong» → страница Армстронг
