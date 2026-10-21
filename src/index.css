@@ -108,17 +108,26 @@ input.no-spin {
   border-radius: 999px;
 }
 
-/* marquee ticker */
+/* marquee ticker
+   --ticker-shift — на сколько сдвигается лента за один круг (равна ширине одной копии),
+   --ticker-duration — время полного круга. Оба значения задаёт шапка: копий столько,
+   чтобы лента всегда была шире экрана и не появлялось пустых мест. */
 @keyframes ticker {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(var(--ticker-shift, -50%), 0, 0);
   }
 }
 .animate-ticker {
-  animation: ticker 28s linear infinite;
+  animation: ticker var(--ticker-duration, 28s) linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes floaty {
@@ -147,4 +156,147 @@ input.no-spin {
 }
 .animate-scheme-in {
   animation: scheme-in 0.28s ease-out both;
+}
+
+/* ---------- печать страниц спецификаций материалов ----------
+   На бумагу выводится только блок от заголовка страницы до строки
+   «Итого материалы»: без шапки сайта, кнопок, пометки и подвала.
+   Правила действуют лишь когда открыта эта страница (класс на <body>),
+   поэтому печать остальных страниц сайта не меняется. */
+
+/* служебная строка документа видна только на печати */
+.spec-print-only {
+  display: none;
+}
+
+@media print {
+  /* нулевые поля листа: браузер не печатает колонтитулы
+     (дату, время, заголовок, адрес сайта и номера страниц) */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html:has(body.spec-print-active),
+  body.spec-print-active {
+    background: #fff !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* шапка и подвал полностью убираются из потока — иначе появляется пустая 2-я страница */
+  body.spec-print-active header,
+  body.spec-print-active footer {
+    display: none !important;
+  }
+
+  /* отступы от края листа вместо полей страницы; документ — ровно один лист */
+  body.spec-print-active .spec-print-area {
+    padding: 14mm 12mm !important;
+    max-height: 297mm;
+    overflow: hidden !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* при печати видна только спецификация */
+  body.spec-print-active * {
+    visibility: hidden !important;
+  }
+  body.spec-print-active .spec-print-area,
+  body.spec-print-active .spec-print-area * {
+    visibility: visible !important;
+  }
+  body.spec-print-active .spec-no-print {
+    display: none !important;
+  }
+
+  body.spec-print-active .spec-print-page {
+    padding: 0 !important;
+  }
+  body.spec-print-active .spec-print-page,
+  body.spec-print-active .spec-print-area {
+    position: static !important;
+    margin: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  body.spec-print-active .spec-print-area h1 {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+    margin: 0 0 12px !important;
+    color: #14191b !important;
+  }
+
+  /* параметры расчёта — компактной сеткой */
+  body.spec-print-active .spec-print-area [class*="grid"] {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    margin: 0 0 12px !important;
+    border: 1px solid #e5e4e0 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    break-inside: avoid;
+  }
+  body.spec-print-active .spec-print-area [class*="grid"] > div {
+    background: #fff !important;
+    padding: 6px 8px !important;
+    border-right: 1px solid #e5e4e0 !important;
+    border-bottom: 1px solid #e5e4e0 !important;
+  }
+
+  /* таблица целиком, вместе со строкой «Итого материалы» */
+  body.spec-print-active .spec-print-table {
+    border: 1px solid #e5e4e0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+  body.spec-print-active .spec-print-table > div {
+    overflow: visible !important;
+  }
+  body.spec-print-active .spec-print-table table {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: collapse !important;
+    font-size: 9.5pt !important;
+  }
+  body.spec-print-active .spec-print-table thead {
+    display: table-header-group !important;
+  }
+  body.spec-print-active .spec-print-table tfoot {
+    display: table-row-group !important;
+    break-inside: avoid;
+  }
+  body.spec-print-active .spec-print-table tr {
+    break-inside: avoid;
+  }
+  body.spec-print-active .spec-print-table th,
+  body.spec-print-active .spec-print-table td {
+    padding: 5px 7px !important;
+  }
+  body.spec-print-active .spec-print-table a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  body.spec-print-active .spec-print-table svg {
+    display: none !important;
+  }
+  body.spec-print-active .spec-print-table tfoot td {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body.spec-print-active .spec-print-table tfoot .text-\[40px\] {
+    font-size: 20pt !important;
+  }
+
+  body.spec-print-active .spec-print-only {
+    display: block !important;
+    visibility: visible !important;
+  }
 }
